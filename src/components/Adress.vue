@@ -1,5 +1,16 @@
 <script setup lang="ts">
+/**
+ * On importe ref depuis Vue.
+ * Elle permet de créer des "références" (variables réactives)
+ * qu'on va lier à nos champs de formulaire.
+ */
 import { ref } from "vue";
+
+/**
+ * Définition des variables (réactives) qui stockent
+ * la valeur de chaque champ du formulaire.
+ * Par défaut, on les initialise à des chaînes de caractères vides ou false.
+ */
 
 const company = ref("");
 const firstName = ref("");
@@ -17,6 +28,11 @@ const billingAddressDifferent = ref(false);
 </script>
 
 <template>
+  <!-- 
+    v-container : composant Vuetify qui fournit un "contenant" 
+    On lui ajoute une classe address-container pour styliser le fond 
+    et le centrer verticalement. 
+  -->
   <v-container class="address-container">
     <v-card class="pa-6 mx-auto" max-width="800px" elevation="3">
       <!-- Étapes -->
@@ -24,6 +40,12 @@ const billingAddressDifferent = ref(false);
         <v-col cols="12" class="text-center">
           <h2 class="text-h6 font-weight-bold">Livraison de mon objet</h2>
         </v-col>
+
+        <!-- 
+          On crée une rangée avec les 3 pastilles (ADRESSE, EXPÉDITION, PAIEMENT).
+          Ici, l'étape 1 (ADRESSE) est colorée en orange.
+          Les étapes 2 et 3 sont en gris.
+        -->
         <v-col cols="12" class="d-flex justify-center">
           <v-avatar size="40" class="bg-orange text-white font-weight-bold"
             >1</v-avatar
@@ -38,9 +60,13 @@ const billingAddressDifferent = ref(false);
 
       <!-- Formulaire -->
       <v-form>
+        <!-- Petit titre "ADRESSE DE LIVRAISON" -->
+
         <h3 class="text-subtitle-1 font-weight-bold mt-4">
           ADRESSE DE LIVRAISON
         </h3>
+
+        <!-- Champ "Entreprise" -->
 
         <v-text-field
           v-model="company"
@@ -68,6 +94,8 @@ const billingAddressDifferent = ref(false);
           </v-col>
         </v-row>
 
+        <!-- Champ "Email" -->
+
         <v-text-field
           v-model="email"
           label="Email *"
@@ -75,6 +103,10 @@ const billingAddressDifferent = ref(false);
           dense
         ></v-text-field>
 
+        <!-- 
+          Row pour "Pays" et "Adresse" 
+          (v-select et v-text-field côte à côte).
+        -->
         <v-row>
           <v-col cols="6">
             <v-select
@@ -141,6 +173,10 @@ const billingAddressDifferent = ref(false);
           </v-col>
         </v-row>
 
+        <!-- Cases à cocher :
+             - Instructions de livraison
+             - Adresse de facturation différente
+        -->
         <v-checkbox
           v-model="deliveryInstructions"
           label="Instructions de livraison (interphone, étage, indications pour le livreur)"
@@ -150,7 +186,11 @@ const billingAddressDifferent = ref(false);
           label="Adresse de facturation différente"
         ></v-checkbox>
 
-        <!-- Boutons -->
+        <!-- Boutons "Retour" et "Suivant" 
+             block => pleine largeur 
+             variant="outlined" => style "contour" pour Retour
+             color="primary" => style bleu pour "Suivant"
+        -->
         <v-row class="mt-4">
           <v-col cols="6">
             <v-btn variant="outlined" block>Retour</v-btn>

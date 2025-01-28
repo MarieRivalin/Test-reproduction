@@ -1,11 +1,14 @@
 <script setup lang="ts">
 import { ref, computed } from "vue";
+//importation de computed pour calculer automatiquement la somme de shippingCost et serviceFee
 
-// Exemples de coûts (tu peux les récupérer d'ailleurs si tu veux)
+// Exemples de coûts
 const shippingCost = ref(9.31);
 const serviceFee = ref(6.0);
 
 // Calcul du total
+// On additionne shippingCost + serviceFee
+// et on formate le résultat pour qu'il ait toujours 2 décimales
 const totalCost = computed(() => {
   return (shippingCost.value + serviceFee.value).toFixed(2);
 });
@@ -24,6 +27,8 @@ const cardCountry = ref("France");
     <v-card class="pa-6 mx-auto" max-width="800px" elevation="3">
       <!-- Étapes (header) -->
       <v-row class="justify-center">
+        <!-- Titre principal -->
+
         <v-col cols="12" class="text-center">
           <h2 class="text-h6 font-weight-bold">Livraison de mon objet</h2>
         </v-col>
@@ -53,7 +58,11 @@ const cardCountry = ref("France");
       <!-- Récapitulatif -->
       <v-row class="mt-4">
         <v-col cols="12">
+          <!-- Titre "Récapitulatif" -->
+
           <h3 class="text-subtitle-1 font-weight-bold">Récapitulatif</h3>
+          <!-- On affiche quelques données (coût expédition, frais de service, total...) -->
+
           <div class="text-body-1 mb-2">
             <div>Expédition : {{ shippingCost }} €</div>
             <div>
@@ -61,6 +70,9 @@ const cardCountry = ref("France");
             </div>
             <strong>Total : {{ totalCost }} €</strong>
           </div>
+
+          <!-- Petit texte sur la sécurité -->
+
           <small class="grey--text">Module sécurisé SSL par Stripe</small>
         </v-col>
       </v-row>
@@ -133,7 +145,7 @@ const cardCountry = ref("France");
 
 <style scoped>
 .payment-container {
-  background-color: #f7f5f0; /* Fond beige */
+  background-color: #f7f5f0;
   min-height: 100vh;
   display: flex;
   align-items: center;

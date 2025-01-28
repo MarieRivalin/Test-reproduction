@@ -1,13 +1,4 @@
-<script lang="ts" setup>
-import { useRouter } from "vue-router";
-
-const router = useRouter();
-
-const goToAdresse = () => {
-  console.log("Redirection vers /adress");
-  router.push({ path: "/adress" }); // Redirige vers la page adresse
-};
-</script>
+<script lang="ts" setup></script>
 
 <template>
   <v-card class="mx-auto pa-4" max-width="800">
@@ -23,11 +14,11 @@ const goToAdresse = () => {
     ></v-divider>
 
     <v-row justify="center" class="mt-4">
-      <v-col cols="12" sm="5" class="d-flex justify-center align-center">
+      <v-col cols="12" sm="5" class="d-flex justify-center align-start">
         <v-img
           src="../assets/img/d91ed812-2737-421a-26d3-41575b41a194.jpeg"
           alt="objet trouvé"
-          class="rounded-xl image-objet"
+          class="rounded-lg image-objet"
           width="200"
           height="200"
           cover
@@ -52,12 +43,7 @@ const goToAdresse = () => {
         <!-- Boutons -->
         <v-row class="button-group mt-4" dense>
           <v-col cols="12">
-            <v-btn
-              @click="goToAdresse"
-              block
-              color="primary-btn"
-              class="button-option primary-btn"
-            >
+            <v-btn block color="primary-btn" class="button-option primary-btn">
               Envoyer à une adresse
             </v-btn>
           </v-col>
@@ -80,16 +66,6 @@ const goToAdresse = () => {
       </v-col>
     </v-row>
   </v-card>
-
-  <!-- Texte avant le footer -->
-
-  <p class="text-primary text-center text-body-2 mt-6">
-    <b>[TEST] Hilton Garden Inn Bordeaux Centre</b>
-  </p>
-  <p class="text-primary text-center text-body-2 mt-6">
-    Avenue du Gén Leclerc, Cauterets
-  </p>
-  <p class="text-primary text-center text-body-2 mt-6">Tel : +33123456789</p>
 </template>
 
 <style scoped>

@@ -5,11 +5,27 @@ import { ref } from "vue";
 const selectedOffer = ref("eco");
 </script>
 <template>
+  <!-- 
+    v-container : c'est le composant Vuetify qui crée un conteneur avec des espacements par défaut.
+    On lui ajoute un style pour avoir un fond gris et le centrer verticalement. 
+  -->
   <v-container class="offer-container">
+    <!-- 
+      v-card : composant de carte Vuetify 
+    
+    -->
     <v-card class="pa-6 mx-auto" max-width="800px" elevation="3">
-      <!-- Étapes (header) -->
+      <!-- 
+        Cette row contient les pastilles "ADRESSE - EXPÉDITION - PAIEMENT"
+        On fait 3 colonnes : 
+         - la première pour le titre
+         - la deuxième pour afficher les 3 "étapes" 
+      -->
+
       <v-row class="justify-center">
         <v-col cols="12" class="text-center">
+          <!-- text-h6 : style Vuetify => heading 6  -->
+
           <h2 class="text-h6 font-weight-bold">Livraison de mon objet</h2>
         </v-col>
 
@@ -40,10 +56,11 @@ const selectedOffer = ref("eco");
         </v-col>
       </v-row>
 
-      <!-- Choix du mode de livraison : Radio group -->
+      <!-- Choix du mode de livraison : Radio group
+        v-form : container Vuetify pour un formulaire
+        v-radio-group : le groupe de radio => on le relie à la variable selectedOffer (dans le <script>). -->
       <v-form>
         <v-radio-group v-model="selectedOffer" color="primary">
-          <!-- Offre Économique -->
           <v-radio label="Économique : 15.31 €" value="eco">
             <template #label>
               <strong>Économique : 15.31 €</strong>
@@ -75,7 +92,10 @@ const selectedOffer = ref("eco");
         </v-radio-group>
       </v-form>
 
-      <!-- Boutons bas de formulaire -->
+      <!-- 
+        Boutons de bas de page : 
+        
+      -->
       <v-row class="mt-4">
         <v-col cols="6">
           <v-btn variant="outlined" block>Retour</v-btn>
@@ -90,7 +110,7 @@ const selectedOffer = ref("eco");
 
 <style scoped>
 .offer-container {
-  background-color: #f7f5f0; /* Fond beige */
+  background-color: #f7f5f0;
   min-height: 100vh;
   display: flex;
   align-items: center;

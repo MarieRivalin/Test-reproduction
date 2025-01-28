@@ -1,3 +1,5 @@
+<!-- Tentative de faire fonctionner le router. Je laisse quand même le code ici -->
+
 <script setup lang="ts">
 import { ref } from "vue";
 
@@ -166,7 +168,7 @@ const billingAddressDifferent = ref(false);
 
 <style scoped>
 .address-container {
-  background-color: #f7f5f0; /* Fond beige */
+  background-color: #f7f5f0;
   min-height: 100vh;
   display: flex;
   align-items: center;

@@ -8,7 +8,7 @@ const serviceFee = ref(6.0);
 
 // Calcul du total
 // On additionne shippingCost + serviceFee
-// et on formate le résultat pour qu'il ait toujours 2 décimales
+// et on formate le résultat pour qu'il ait toujours 2 décimales (.toFixed(2))
 const totalCost = computed(() => {
   return (shippingCost.value + serviceFee.value).toFixed(2);
 });
@@ -135,6 +135,7 @@ const cardCountry = ref("France");
             <v-btn variant="outlined" block>Retour</v-btn>
           </v-col>
           <v-col cols="6">
+            <!-- Utilisation de la valeur dynamique computed -->
             <v-btn block color="primary"> Payer {{ totalCost }} € </v-btn>
           </v-col>
         </v-row>

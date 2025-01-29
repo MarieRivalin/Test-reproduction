@@ -189,7 +189,7 @@ const billingAddressDifferent = ref(false);
         <!-- Boutons "Retour" et "Suivant" 
              block => pleine largeur 
              variant="outlined" => style "contour" pour Retour
-             color="primary" => style bleu pour "Suivant"
+             color="primary" => style bleu pour "Suivant" (couleurs définies dans "plugins")
         -->
         <v-row class="mt-4">
           <v-col cols="6">

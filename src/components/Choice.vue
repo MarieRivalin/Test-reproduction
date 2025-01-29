@@ -7,11 +7,14 @@
       <h1>Votre objet oublié</h1>
     </v-card-title>
 
+    <!-- La barre de séparation jaune -->
     <v-divider
       class="border-opacity-75"
       color="warning"
       style="border-top-width: 2px"
     ></v-divider>
+
+    <!-- Photo de l'objet trouvé -->
 
     <v-row justify="center" class="mt-4">
       <v-col cols="12" sm="5" class="d-flex justify-center align-start">
@@ -24,6 +27,8 @@
           cover
         ></v-img>
       </v-col>
+
+      <!-- Texte personnalisé pour le client -->
 
       <v-col cols="12" sm="7">
         <v-card-text class="pt-4">
@@ -40,7 +45,7 @@
           </p>
         </v-card-text>
 
-        <!-- Boutons -->
+        <!-- Boutons pour choisir quoi faire de l'objet oublié -->
         <v-row class="button-group mt-4" dense>
           <v-col cols="12">
             <v-btn block color="primary-btn" class="button-option primary-btn">
@@ -69,6 +74,7 @@
 </template>
 
 <style scoped>
+/* Le Style des boutons */
 .button-group .button-option {
   border-radius: 6px;
   text-transform: none;
@@ -81,7 +87,7 @@
   background-color: #2a3e8e;
   color: #ffffff;
 }
-
+/* Le style des boutons quand on passe la souris dessus */
 .button-option.primary-btn:hover {
   background-color: #0056b3;
 }

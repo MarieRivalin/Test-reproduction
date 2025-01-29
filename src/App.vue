@@ -22,6 +22,7 @@ import Payment from "./components/Payment.vue";
       <Adress />
       <Offer />
       <Payment />
+      <!-- La partie contact située avant le footer -->
       <Contact />
     </v-app>
   </v-container>
@@ -35,6 +36,7 @@ import Payment from "./components/Payment.vue";
   </v-footer>
 </template>
 <style>
+/* Ajout de style pour différents éléments de la page */
 .myContainer {
   padding-top: 2rem;
   background-color: #f4f3ef;

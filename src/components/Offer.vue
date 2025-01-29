@@ -49,7 +49,7 @@ const selectedOffer = ref("eco");
         </v-col>
       </v-row>
 
-      <!-- Titre / Sous-titre -->
+      <!-- Titre  -->
       <v-row class="mt-4">
         <v-col cols="12">
           <h3 class="text-subtitle-1 font-weight-bold">Mode de livraison</h3>
